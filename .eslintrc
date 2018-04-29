@@ -27,15 +27,11 @@
       }
     ],
     "indent": [
-      2,
-      "tab",
-      {
-        "SwitchCase": 1
-      }
+      "error",
+      "tab"
     ],
     "consistent-this": [
-      2,
-      "self"
+      2, "that"
     ],
     "max-len": [
       1,
@@ -48,9 +44,14 @@
   },
   "env": {
     "browser": true,
+    "commonjs": true,
     "jquery": true
   },
   "globals": {
     "localStorage": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
   }
 }
