@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<img src="{{ qr_code_path(message) }}"/>
+	<h1>Welcome to <strong>Snabb</strong><i class="fa fa-rocket sn-rocket"></i></h1>
+	<h5>Snabb is a small online tool that lets you generate <a href="//en.wikipedia.org/wiki/QR_code">QR code</a> labels from your <a href="//colnect.com">Colnect</a> collection.</h5>
+	<button class="button">Let the fun begin!</button>
+{% endblock %}
