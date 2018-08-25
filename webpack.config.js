@@ -12,21 +12,20 @@ Encore
 	// uncomment to create hashed filenames (e.g. app.abc123.css)
 	// .enableVersioning(Encore.isProduction())
 
-	.addEntry('app', './assets/js/app.js')
+	.addEntry('app', './assets/ts/app.tsx')
 	// .addStyleEntry('scss/app', './assets/scss/app.scss')
 
-	.configureBabel(function(babelConfig) {
-		babelConfig.presets.push('es2017');
-	})
+	// enable TypeScript
+	.enableTypeScriptLoader()
+
+	// enable React
+	// enableReactPreset()
 
 	// uncomment if you use Sass/SCSS files
 	.enableSassLoader()
 
 	// show OS notifications when builds finish/fail
 	.enableBuildNotifications()
-
-	// enable React
-	.enableReactPreset()
 
 	// uncomment for legacy applications that require $/jQuery as a global variable
 	// .autoProvidejQuery()
