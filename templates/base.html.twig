@@ -18,10 +18,11 @@
 			</ul>
 		</nav>
 		{% endblock %}
-		<div class="sn-container sn-intro">
-			{% block body %}{% endblock %}
+		<div class="sn-container" id="react-container">
+			{# {% block body %}{% endblock %} #}
 		</div>
-		<script src="{{ asset('build/app.js') }}"></script>
-		{# {% block javascripts %}{% endblock %} #}
+		{% block javascripts %}
+			<script src="{{ asset('build/app.js') }}"></script>
+		{% endblock %}
 	</body>
 </html>
