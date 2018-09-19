@@ -12,14 +12,11 @@ Encore
 	// uncomment to create hashed filenames (e.g. app.abc123.css)
 	// .enableVersioning(Encore.isProduction())
 
-	.addEntry('app', './assets/ts/app.tsx')
+	.addEntry('app', './assets/js/app.jsx')
 	// .addStyleEntry('scss/app', './assets/scss/app.scss')
 
-	// enable TypeScript
-	.enableTypeScriptLoader()
-
 	// enable React
-	// enableReactPreset()
+	.enableReactPreset()
 
 	// uncomment if you use Sass/SCSS files
 	.enableSassLoader()
