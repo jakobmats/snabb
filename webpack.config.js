@@ -15,8 +15,10 @@ Encore
 	.addEntry('app', './assets/js/app.jsx')
 	// .addStyleEntry('scss/app', './assets/scss/app.scss')
 
-	// enable React
-	.enableReactPreset()
+	// configure Babel
+	.configureBabel((babelConfig) => {
+		babelConfig.plugins.push('babel-plugin-transform-react-jsx');
+	})
 
 	// uncomment if you use Sass/SCSS files
 	.enableSassLoader()
