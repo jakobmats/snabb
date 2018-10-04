@@ -9,19 +9,6 @@
 		<link rel="stylesheet" href="{{ asset('build/app.css') }}">
 	</head>
 	<body>
-		{% block top_menu %}
-		<nav class="sn-top-bar">
-			<ul class="sn-menu">
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/faq">FAQ</a></li>
-				<li><a href="/contact">Contact me</a></li>
-			</ul>
-		</nav>
-		{% endblock %}
-		<div class="sn-container" id="react-container">
-			{# {% block body %}{% endblock %} #}
-		</div>
 		{% block javascripts %}
 			<script src="{{ asset('build/app.js') }}"></script>
 		{% endblock %}
