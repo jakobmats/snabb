@@ -6,7 +6,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/jakobmats/colnect-api"
+            "url": "https://github.com/jakobmats/colnectapi"
         }
     ],
     "require": {
@@ -31,7 +31,7 @@
         "symfony/web-link": "^4.0",
         "symfony/webpack-encore-pack": "^1.0",
         "symfony/yaml": "^4.0",
-        "colnect/api": "master@dev"
+        "jakobmats/colnectapi": "master@dev"
     },
     "require-dev": {
         "symfony/browser-kit": "^4.0",
