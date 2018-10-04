@@ -14,7 +14,6 @@
         "@symfony/webpack-encore": "^0.20.1",
         "babel-plugin-syntax-jsx": "^6.18.0",
         "babel-plugin-transform-react-jsx": "^6.24.1",
-        "font-awesome": "^4.7.0",
         "mithril": "^1.1.6",
         "node-sass": "^4.9.0",
         "sass-loader": "^7.0.1",
