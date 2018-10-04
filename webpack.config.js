@@ -12,12 +12,12 @@ Encore
 	// uncomment to create hashed filenames (e.g. app.abc123.css)
 	// .enableVersioning(Encore.isProduction())
 
-	.addEntry('app', './assets/js/app.jsx')
+	.addEntry('app', './assets/js/app.js')
 	// .addStyleEntry('scss/app', './assets/scss/app.scss')
 
 	// configure Babel
 	.configureBabel((babelConfig) => {
-		babelConfig.plugins.push('babel-plugin-transform-react-jsx');
+		// Empty for now
 	})
 
 	// uncomment if you use Sass/SCSS files
