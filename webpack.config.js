@@ -12,7 +12,7 @@ Encore
 	// uncomment to create hashed filenames (e.g. app.abc123.css)
 	// .enableVersioning(Encore.isProduction())
 
-	.addEntry('app', './assets/js/app.js')
+	.addEntry('app', './assets/js/App.js')
 	// .addStyleEntry('scss/app', './assets/scss/app.scss')
 
 	// configure Babel
