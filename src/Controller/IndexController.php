@@ -3,13 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class IndexController extends Controller
 {
 	/**
-	 * @Route("/", name="index")
+	 * @Route("/")
 	 */
 	public function index()
 	{
