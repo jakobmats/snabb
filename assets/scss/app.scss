@@ -1,55 +1,65 @@
+// Flat palette: https://www.materialui.co/flatuicolors
+$pomegranate: #c0392b;
+$alizarin: #e74c3c;
+$pumpkin: #d35400;
+$carrot: #e67e22;
+$orange: #f39c12;
+$sunflower: #f1c40f;
+$nephritis: #27ae60;
+$emerland: #2ecc71;
+$belizehole: #2980b9;
+$peterriver: #3498db;
+$wisteria: #8e44ad;
+$amethyst: #9b59b6;
+$midnightblue: #2c3e50;
+$cloud: #ecf0f1;
+
+
 html, body {
 	width: 100%;
 	height: 100%;
+	color: $midnightblue;
 }
 
-.sn-top-bar {
-	font-family: 'Open Sans', sans-serif;
-	height: auto;
-	width: 100%;
-	z-index: 1;
-
-	.sn-menu {
-		padding: 10px;
-		list-style: none;
-		border-bottom: .1rem solid #d1d1d1;
-		margin-bottom: 0;
-
-		li {
-			display: inline;
-
-			&:not(:last-child):after {
-				content: ' | ';
-			}
-		}
-	}
+.welcome-banner {
+	// color: $midnightblue;
+	text-align: center;
 }
 
-.sn-container {
-	height: 100%;
-	width: 100%;
-	padding: 10%;
-	background: url('crossword.png');
-
-	&.sn-intro {
-		text-align: center;
-
-		img {
-			width: 170px;
-			height: 170px;
-		}
-
-		.sn-rocket {
-			padding: 0 10px;
-			color: rgb(244, 78, 66);
-			animation: power-colors 3s infinite alternate;
-		}
-
-		@keyframes power-colors {
-			0% { color: rgb(244, 78, 66); }
-			25% { color: rgb(244, 220, 65); }
-			50% { color: rgb(65, 244, 112); }
-			100% { color: rgb(65, 196, 244); }
-		}
-	}
+.rainbow-rocket {
+	color: $alizarin;
+	padding: 0.5em;
 }
+
+.about-snabb > div {
+	background-color: $cloud;
+}
+
+// .sn-container {
+// 	height: 100%;
+// 	width: 100%;
+// 	padding: 10%;
+// 	background: url('crossword.png');
+
+// 	&.sn-intro {
+// 		text-align: center;
+
+// 		img {
+// 			width: 170px;
+// 			height: 170px;
+// 		}
+
+// 		.sn-rocket {
+// 			padding: 0 10px;
+// 			color: rgb(244, 78, 66);
+// 			animation: power-colors 3s infinite alternate;
+// 		}
+
+// 		@keyframes power-colors {
+// 			0% { color: rgb(244, 78, 66); }
+// 			25% { color: rgb(244, 220, 65); }
+// 			50% { color: rgb(65, 244, 112); }
+// 			100% { color: rgb(65, 196, 244); }
+// 		}
+// 	}
+// }
