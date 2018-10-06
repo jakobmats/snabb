@@ -8,23 +8,15 @@ export const Menu = {
 				'text': 'Home'
 			},
 			{
-				'route': '/about',
-				'text': 'About'
-			},
-			{
-				'route': '/faq',
-				'text': 'FAQ'
-			},
-			{
 				'route': '/contact',
 				'text': 'Contact me'
 			}
 		];
 	},
 	view(vnode) {
-		return m('nav.sn-top-bar', m('ul.sn-menu',
+		return m('.pure-menu.pure-menu-horizontal.top-menu', m('ul.pure-menu-list',
 			vnode.state.items.map(item => {
-				return m('li', [m(`a[href=${item.route}]`, item.text)])
+				return m('li.pure-menu-item', m('a.pure-menu-link', {href: item.route, oncreate: m.route.link}, item.text));
 			})
 		));
 	}
