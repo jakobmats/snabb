@@ -13,53 +13,53 @@ $wisteria: #8e44ad;
 $amethyst: #9b59b6;
 $midnightblue: #2c3e50;
 $cloud: #ecf0f1;
+$concrete: #95a5a6;
 
 
 html, body {
-	width: 100%;
 	height: 100%;
+	width: 100%;
 	color: $midnightblue;
 }
 
 .welcome-banner {
-	// color: $midnightblue;
 	text-align: center;
 }
 
-.rainbow-rocket {
-	color: $alizarin;
-	padding: 0.5em;
+.rocket {
+	color: $belizehole;
+	padding: 0.1em;
 }
 
-.about-snabb > div {
+.info-box {
 	background-color: $cloud;
+	box-sizing: border-box;
+	padding: 1em;
 }
 
-// .sn-container {
-// 	height: 100%;
-// 	width: 100%;
-// 	padding: 10%;
-// 	background: url('crossword.png');
+.info-box-question {
+	font-weight: 600;
+}
 
-// 	&.sn-intro {
-// 		text-align: center;
+.go-link {
+	color: $alizarin;
+	text-decoration: none;
+}
 
-// 		img {
-// 			width: 170px;
-// 			height: 170px;
-// 		}
+.heart {
+	// color: $alizarin;
+	padding: 0.1em;
+}
 
-// 		.sn-rocket {
-// 			padding: 0 10px;
-// 			color: rgb(244, 78, 66);
-// 			animation: power-colors 3s infinite alternate;
-// 		}
+.left-panel-container, .barcode-gallery-container {
+	box-sizing: border-box;
+	padding: 1em;
+}
 
-// 		@keyframes power-colors {
-// 			0% { color: rgb(244, 78, 66); }
-// 			25% { color: rgb(244, 220, 65); }
-// 			50% { color: rgb(65, 244, 112); }
-// 			100% { color: rgb(65, 196, 244); }
-// 		}
-// 	}
-// }
+.left-panel-container {
+	background: $concrete;
+}
+
+.barcode-gallery-container {
+	background: $cloud;
+}
