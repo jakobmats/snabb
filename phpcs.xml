@@ -30,9 +30,6 @@
 <rule ref="Generic.PHP.NoSilencedErrors"/>
 <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
 <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
-<rule ref="PHPUnitStandard.Testing.FileNameSuffix"/>
-<rule ref="PHPUnitStandard.Testing.NoOutputFunctions"/>
-<rule ref="PHPUnitStandard.Testing.NoOutputStatements"/>
 <rule ref="PSR1.Classes.ClassDeclaration"/>
 <rule ref="PSR1.Files.SideEffects"/>
 <rule ref="PSR2.Classes.ClassDeclaration"/>
