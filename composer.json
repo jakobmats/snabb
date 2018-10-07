@@ -1,5 +1,5 @@
 {
-    "name": "Snabb",
+    "name": "jakobmats/snabb",
     "type": "project",
     "license": "MIT",
     "description": "Snabb is a small online tool that lets you generate QR code labels from your Colnect collection.",
