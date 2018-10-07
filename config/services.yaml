@@ -28,7 +28,7 @@ services:
     # please note that last definitions always *replace* previous ones
 
     # Colnect API provider specific settings
-    App\Service\ColnectAPIProvider:
+    App\Service\ColnectAPIService:
         arguments:
             $key: '%env(COLNECTAPI_KEY)%'
             $url: '%env(COLNECTAPI_ENDPOINT)%'
