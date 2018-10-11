@@ -2,4 +2,6 @@
 	"eslint.packageManager": "yarn",
 	"editor.insertSpaces": false,
 	"editor.tabSize": 2,
+	"php.suggest.basic": false,
+	"php.validate.enable": false,
 }
