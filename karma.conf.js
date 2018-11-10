@@ -14,7 +14,7 @@ module.exports = config => {
 		frameworks: ['mocha', 'chai'],
 		files: ['js/tests/**/*.js'],
 		exclude: [],
-		preprocessors: {'js/tests/**/*.js': ['webpack']},
+		preprocessors: {'js/tests/**/*.js': ['webpack', 'sourcemap']},
 		webpack: webpackConfig,
 		reporters: ['progress'],
 		port: 9876,
