@@ -3,7 +3,7 @@ namespace App\Service;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Psr\Cache\CacheItemPoolInterface;
-use GuzzleHttp\Client;
+use Psr\Log\LoggerInterface;
 
 /**
  * Wrap Colnect API client in a Symfony service
@@ -19,77 +19,32 @@ class ColnectAPIService
 	private $client;
 
 	/**
-	 * Cache adapter instance
-	 *
-	 * @var AdapterInterface
-	 */
-	private $cache;
-
-	/**
-	 * Cache key prefix to prevent typos :)
-	 */
-	private const CACHE_PREFIX = 'colnectapi.';
-
-	/**
-	 * Undocumented function
+	 * Service constructor
 	 *
 	 * @param RequestStack $requestStack
-	 * @param RedisAdapter $cache
+	 * @param CacheItemPoolInterface $cache
 	 * @param string $key
 	 * @param string $url
 	 */
-	public function __construct(RequestStack $requestStack, CacheItemPoolInterface $cache, string $key, string $url)
+	public function __construct(
+		RequestStack $requestStack,
+		CacheItemPoolInterface $cache,
+		LoggerInterface $logger,
+		string $key,
+		string $url)
 	{
-		// $this->apiVar = new ColnectAPI($key, $requestStack->getCurrentRequest()->getLocale(), $url);
-		$this->client = new Client([
-			'base_uri' => $url.'/'.$requestStack->getCurrentRequest()->getLocale().'/'.$key
-		]);
-		$this->cache = $cache;
+		$decoder = new Internal\JSONDecoder;
+		$this->client = new Internal\CacheableHTTPClient(
+			$cache,
+			$logger,
+			$decoder,
+			'colnectapi.',
+			$url.'/'.$requestStack->getCurrentRequest()->getLocale().'/api/'.$key.'/'
+		);
 	}
 
-	/**
-	 * Return list of all Colnect categories available via the API
-	 *
-	 * @return array
-	 */
-	public function getCategoryList(): array
+	public function cachedRequest(string $request, callable $onError)
 	{
-		return $this->cachedRequest('/categories', 'categories', function () {
-			return ['Error loading list'];
-		});
-	}
-
-	/**
-	 * Download data from the Colnect API or return the cached version
-	 *
-	 * @param string $request
-	 * @param string $cacheKey
-	 * @return void
-	 */
-	private function cachedRequest(string $request, string $cacheKey, \Closure $onError)
-	{
-		$fullCacheKey = self::CACHE_PREFIX.$cacheKey;
-		if (!$this->cache->has($fullCacheKey)) {
-			try {
-				$item = $this->client->get($request);
-				$this->cache->set($fullCacheKey, $item);
-
-				// Return newly fetched data
-				return $item;
-			} catch (Exception $e) {
-				$this->logApiError($e);
-
-				// Call custom handler
-				return $onError->call();
-			}
-		}
-
-		// Return cached data
-		return $this->cache->get($fullCacheKey);
-	}
-
-	private function logApiError(Exception $e)
-	{
-
+		return $this->client->request($request, null, $onError);
 	}
 }
